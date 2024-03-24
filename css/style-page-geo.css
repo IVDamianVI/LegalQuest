@@ -1,0 +1,33 @@
+@import url('colors.css');
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 5px;
+}
+
+th,
+td {
+    border: 1px solid var(--background-page-color) !important;
+    padding: 5px;
+}
+
+td {
+    background-color: var(--dark-grey-color) !important;
+}
+
+th {
+    background-color: var(--primary-color) !important;
+    color: var(--background-page-color) !important;
+}
+
+@media only screen and (max-width: 992px) {
+    td {
+        font-size: 0.5em !important;
+    }
+
+    th {
+        font-size: 0.5em !important;
+    }
+
+}

@@ -1,0 +1,52 @@
+@import url('colors.css');
+
+#changeAvatarImg {
+    border: 2px solid var(--background-page-color);
+}
+
+#changeAvatarIcon {
+    display: none;
+    color: var(--primary-color);
+    position: absolute;
+    font-size: 2em;
+    margin-top: 4.5em;
+    margin-left: 4.75em;
+}
+
+#changeBannerIcon {
+    display: none;
+    color: var(--primary-color);
+    position: absolute;
+    font-size: 2em;
+    margin-top: 7.3em;
+    margin-left: 38.75em;
+    opacity: 50%;
+}
+
+#changeAvatar:hover {
+    #changeAvatarImg {
+        border: 2px solid var(--primary-color);
+    }
+
+    #changeAvatarIcon {
+        display: block;
+    }
+}
+
+.banner:hover {
+    #changeBannerIcon {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #changeAvatarIcon {
+        display: block;
+    }
+
+    #changeBannerIcon {
+        display: block;
+        margin-top: 0em;
+        margin-left: 8.5em;
+    }
+}

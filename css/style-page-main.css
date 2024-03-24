@@ -1,0 +1,138 @@
+@import url('colors.css');
+
+body {
+    cursor: default;
+}
+
+main {
+    padding-top: 2em !important;
+    margin-bottom: 5em !important;
+}
+
+a {
+    cursor: default;
+}
+
+a.nav-link {
+    cursor: pointer !important;
+}
+
+#btnSwitch {
+    top: 45%;
+}
+
+.card {
+    background-color: var(--dark-grey-color) !important;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 0 var(--background-page-color), -1px -1px 0 var(--background-page-color), 1px -1px 0 var(--background-page-color), -1px 1px 0 var(--background-page-color) !important;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.sekcja1 {
+    height: auto;
+    width: auto;
+    text-align: left;
+    border-width: 1px;
+    margin-top: 45px;
+    margin-left: 5px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+}
+
+.section {
+    height: auto;
+    width: auto;
+    text-align: left;
+    border-width: 1px;
+    margin-top: 45px;
+    margin-left: 5px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+}
+
+.theme-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.theme-container:hover {
+    opacity: 0.8;
+}
+
+.shadow-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    box-shadow: 17px 17px 23px #1a1d20,
+        -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
+        inset -5px -5px 4px #24282c;
+}
+
+.shadow-light {
+    box-shadow: 7px 7px 15px -10px #bbcfda, -4px -4px 13px #ffffff,
+        inset 7px 7px 3px rgba(209, 217, 230, 0.35),
+        inset -11px -11px 3px rgba(255, 255, 255, 0.3)
+}
+
+.change {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+@keyframes change {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+.shine {
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 1px #ffffff;
+    }
+
+    10% {
+        text-shadow: 0 0 1px var(--background-page-color);
+    }
+
+    50% {
+        text-shadow: 0 0 20px var(--primary-color);
+    }
+
+    90% {
+        text-shadow: 0 0 1px var(--background-page-color);
+    }
+
+    100% {
+        text-shadow: 0 0 1px #ffffff;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .pc-only {
+        display: none;
+    }
+}

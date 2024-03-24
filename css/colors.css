@@ -1,0 +1,89 @@
+:root {
+    --logo-primary-color: #ffffff;
+    --logo-secondary-color: var(--primary-color);
+
+    --primary-color: #00ff55;
+    --background-page-color: #000;
+    --dark-grey-color: #151515;
+    --dark-grey-color-2: #0e0e0e;
+
+    --font-color: #000;
+
+    --input-bg-color: #212121;
+    --input-border-color: #333333;
+    --input-font-color: #c6c6c6;
+
+    --navbar-bg-color: #0e0e0e;
+
+    --footer-color: #c6c6c6;
+    --footer-bg-color-1: #151515;
+    --footer-bg-color-2: #0e0e0e;
+
+    --icon-hover-color: #ffffff;
+
+    --account-bg-color: #c6c6c6;
+    --account-hover-bg-color: #ffffff;
+
+    --show-profile-color: #969696;
+    --show-profile-hover-color: #ffffff;
+
+    --dropdown-color: #ffffff;
+    --dropdown-item-hover-color: #2e2e2e;
+
+    --navitem-color: #ffffff;
+    --navitem-border-color: #00000000;
+    --navitem-hover-bg-color: #191919;
+    --navitem-hover-border-color: #00000000;
+
+    --error-color: #e44545;
+    --success-color: #45e46d;
+}
+
+#logo {
+    -webkit-filter: drop-shadow(0px 0px 2px var(--logo-secondary-color));
+    filter: drop-shadow(02px 0px 2px var(--logo-secondary-color));
+    fill: var(--logo-primary-color);
+}
+
+.colors {
+    /*^ LOGO  */
+    color: #ffffff;
+    color: var(--background-page-color);
+    background-color: var(--primary-color);
+    /*^ Navbar */
+    background-color: var(--dark-grey-color-2);
+    /*^ Ikony */
+    color: #c6c6c6;
+    /*^ Podkreślenie wybranej strony */
+    color: var(--primary-color);
+    /*^ Tytuł */
+    color: #ffffff;
+    /*^ Podtytuł */
+    color: #c0c0c0;
+    /*^ Input */
+    /* input background */
+    background-color: #212121;
+    /* input label text */
+    color: #606060;
+    /* input text */
+    color: #c0c0c0;
+    /* input:active border */
+    color: #9e9e9e;
+    /*^ Submit Button */
+    background-color: #2f2f2f;
+    color: #969696;
+    /*^ Wyszukiwanie */
+    background-color: #252525;
+    color: #ffffff;
+    color: #c0c0c0;
+    /*^ Tło okienek */
+    background-color: var(--dark-grey-color);
+    /*^ Tło strony */
+    background-color: var(--background-page-color);
+    /*^ Błąd */
+    color: #e44545;
+    background-color: var(--dark-grey-color);
+    /*^ Pomyślnie */
+    color: #45e46d;
+    background-color: var(--dark-grey-color);
+}
