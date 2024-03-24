@@ -1,2 +1,51 @@
-# Human-Computer-Interaction-Project
- "Human Computer Interaction Project" is a web app fostering legal learning via interactive tests and quizzes, enhancing engagement and aiding exam prep for law students and professionals.
+# Human Computer Interaction
+
+## Description
+
+"Human Computer Interaction" is a web application aimed at facilitating legal learning through interactive tests and quizzes. It focuses on enhancing user engagement in the learning process and providing an efficient tool for exam preparation. Primarily targeting law students, the application also serves individuals preparing for state or professional exams in law.
+
+## Team Members
+
+- Damian Grubecki
+- Maciej Ludwiczak
+
+## Specifications
+
+### Project Theme, Goal, and Scope
+
+The project entails creating a user-friendly web application for learning law through test solving and quizzes. Its goal is to ease users' absorption of legal knowledge interactively, enhance engagement in learning, and provide a tool for effective revision before exams.
+
+### Tools and Technologies
+
+- IDE: Visual Studio Code
+- Backend: PHP
+- Frontend: HTML, CSS, JavaScript, Bootstrap
+- Databases: MySQL
+- Version Control System: Git (GitHub repository)
+
+## Planned Functionalities
+
+- **Tests:**
+   - Solving multiple-choice tests with single or multiple correct answers.
+   - Generating tests based on selected categories and subcategories of law (e.g., civil law, criminal law).
+   - Setting time limits for test completion.
+   - Immediate feedback upon test completion, including answers and explanations.
+
+- **Progress Tracking:**
+   - Tracking personal progress and history of solved tests after creating an account.
+   - Real-time statistics and result analysis to identify areas needing improvement.
+
+- **Personalization:**
+   - Creating custom question sets and tests.
+   - Adding notes and bookmarks to questions.
+
+- **Community:**
+   - Tracking friends' progress and results.
+   - User rankings based on performance.
+
+- **Interface and Accessibility:**
+   - User-friendly and responsive interface adaptable to various devices (computers, tablets, smartphones).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
