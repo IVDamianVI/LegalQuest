@@ -48,4 +48,4 @@ The project entails creating a user-friendly web application for learning law th
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+All rights reserved. Unauthorized copying, modification, distribution, or use of this software, in whole or in part, without the express written permission of the author is strictly prohibited.
