@@ -5,18 +5,17 @@ on:
     branches: [master]
 
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-
+      uses: actions/checkout@master
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ${{ secrets.ftp_server }}
-        username: ${{ secrets.ftp_username }}
+        server: s1.small.pl
+        username: f1932_ick
         password: ${{ secrets.ftp_password }}
         exclude: |
           .git*
@@ -28,4 +27,3 @@ jobs:
           media/avatar/**
           media/banner
           media/banner/**
-          
