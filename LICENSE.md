@@ -1,6 +1,4 @@
-# LICENSE.md
-
-## Human-Computer Interaction - License
+# Human-Computer Interaction - License
 
 ### Copyright Notice
 
