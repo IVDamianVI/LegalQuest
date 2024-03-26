@@ -7,8 +7,8 @@
 ## 👨‍💻 Team Members
 
 ### Devs
-- Damian [IVDamianVI](https://github.com/ivdamianvi) Grubecki
-- Maciej [Ermac14](https://github.com/ermac14) Ludwiczak
+- Damian Grubecki [@IVDamianVI](https://github.com/ivdamianvi)
+- Maciej Ludwiczak [@Ermac14](https://github.com/ermac14)
 
 ### Editors
 - Mgr Sebastian Zmudziński
