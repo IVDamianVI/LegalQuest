@@ -1,21 +1,25 @@
-# Human Computer Interaction
+# Human Computer Interaction 🖥️
 
-## Description
+## Description ℹ️
 
 "Human Computer Interaction" is a web application aimed at facilitating legal learning through interactive tests and quizzes. It focuses on enhancing user engagement in the learning process and providing an efficient tool for exam preparation. Primarily targeting law students, the application also serves individuals preparing for state or professional exams in law.
 
-## Team Members
+## Team Members 👨‍💻
 
-- Damian Grubecki
-- Maciej Ludwiczak
+- **Devs:**
+   - Damian Grubecki
+   - Maciej Ludwiczak
 
-## Specifications
+- **Editors:**
+   - Sebastian Zmudziński
 
-### Project Theme, Goal, and Scope
+## Specifications 📋
+
+### Project Theme, Goal, and Scope 🎯
 
 The project entails creating a user-friendly web application for learning law through test solving and quizzes. Its goal is to ease users' absorption of legal knowledge interactively, enhance engagement in learning, and provide a tool for effective revision before exams.
 
-### Tools and Technologies
+### Tools and Technologies ⚙️
 
 - IDE: Visual Studio Code
 - Backend: PHP
@@ -23,7 +27,7 @@ The project entails creating a user-friendly web application for learning law th
 - Databases: MySQL
 - Version Control System: Git (GitHub repository)
 
-## Planned Functionalities
+## Planned Functionalities 🛠️
 
 - **Tests:**
    - Solving multiple-choice tests with single or multiple correct answers.
@@ -46,6 +50,6 @@ The project entails creating a user-friendly web application for learning law th
 - **Interface and Accessibility:**
    - User-friendly and responsive interface adaptable to various devices (computers, tablets, smartphones).
 
-## License
+## License 📄
 
 All rights reserved. Unauthorized copying, modification, distribution, or use of this software, in whole or in part, without the express written permission of the author is strictly prohibited.
