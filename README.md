@@ -7,11 +7,11 @@
 ## 👨‍💻 Team Members
 
 ### Devs
-- <span style="color:blue">Damian</span> [<span style="color:green">IVDamianVI</span>](https://github.com/ivdamianvi) Grubecki
-- <span style="color:blue">Maciej</span> [<span style="color:green">Ermac14</span>](https://github.com/ermac14) Ludwiczak
+- Damian [IVDamianVI](https://github.com/ivdamianvi) Grubecki
+- Maciej [Ermac14](https://github.com/ermac14) Ludwiczak
 
 ### Editors
-- <span style="color:blue">Mgr Sebastian Zmudziński</span>
+- Mgr Sebastian Zmudziński
 
 ## 📋 Specifications
 
@@ -23,7 +23,7 @@ The project entails creating a user-friendly web application for learning law th
 
 - IDE: Visual Studio Code
 - Backend: PHP
-- Frontend: HTML, CSS, JavaScript, Bootstrap
+- Frontend: HTML, CSS, <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;, Bootstrap
 - Databases: MySQL
 - Version Control System: Git (GitHub repository)
 
