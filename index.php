@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 session_start();
-if (!isset ($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin'])) {
     header('Location: logowanie.php');
     exit();
 }
@@ -48,7 +48,7 @@ include ('controller/logout-auto-controller.php');
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js" type="text/javascript"
         language="javascript"></script>
     <!-- Title -->
-    <title>Strona Główna TEST1</title>
+    <title>Strona Główna</title>
 </head>
 
 <body onload="myLoadHeader(); autoSubmitForm()">

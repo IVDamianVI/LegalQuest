@@ -24,5 +24,7 @@ jobs:
           **/media/avatar/**
           **/media/banner/**
           **/README.md
+          **/LICENSE.md
           **/access.php
           **/database.sql
+          
