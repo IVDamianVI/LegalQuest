@@ -21,19 +21,24 @@ The project entails creating a user-friendly web application for learning law th
 
 ### ⚙️ Tools and Technologies
 
-**IDE:**
-Visual Studio Code
+**IDE**
 
-**Backend:**
-PHP
+<img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original-wordmark.svg" title="Visual Studio Code" alt="Visual Studio Code" width="25" height="25"/>
 
-**Frontend:**
+**Backend**
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/php/php-original.svg" title="PHP" alt="PHP" width="25" height="25"/>
+
+**Frontend**
+
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="25" height="25"/>&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="25" height="25"/>&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="25" height="25"/>&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="25" height="25"/>
 
-**Databases:** 
-MySQL
+**Database**
 
-**Version Control System:**
+<img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="PHP" alt="PHP" width="25" height="25"/>
+
+**Version Control System**
+
 <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original-wordmark.svg" title="Github" alt="Github" width="25" height="25"/>
 
 ## 🛠️ Planned Functionalities
