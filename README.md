@@ -1,4 +1,4 @@
-# Human Computer Interaction
+# Human-Computer Interaction
 
 ## ℹ️ Description
 
