@@ -48,7 +48,7 @@ include ('controller/logout-auto-controller.php');
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js" type="text/javascript"
         language="javascript"></script>
     <!-- Title -->
-    <title>Strona Główna</title>
+    <title>Strona Główna TEST</title>
 </head>
 
 <body onload="myLoadHeader(); autoSubmitForm()">
