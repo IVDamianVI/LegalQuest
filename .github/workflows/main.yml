@@ -17,13 +17,12 @@ jobs:
         server: s1.small.pl
         username: f1932_ick
         password: ${{ secrets.ftp_password }}
+        server-dir: /
         exclude: |
-          .git*
-          .git*/**
-          node_modules/**
-          .database*
-          .database/**
-          media/avatar
-          media/avatar/**
-          media/banner
-          media/banner/**
+          **/.git*
+          **/.git*/**
+          **/media/avatar/**
+          **/media/banner/**
+          **/README.md
+          **/access.php
+          **/database.sql
