@@ -2,7 +2,7 @@
 
 ## ℹ️ Description
 
-"Human Computer Interaction" is a web application aimed at facilitating legal learning through interactive tests and quizzes. It focuses on enhancing user engagement in the learning process and providing an efficient tool for exam preparation. Primarily targeting law students, the application also serves individuals preparing for state or professional exams in law.
+"Human-Computer Interaction" is a web application aimed at facilitating legal learning through interactive tests and quizzes. It focuses on enhancing user engagement in the learning process and providing an efficient tool for exam preparation. Primarily targeting law students, the application also serves individuals preparing for state or professional exams in law.
 
 ## 👨‍💻 Team Members
 
