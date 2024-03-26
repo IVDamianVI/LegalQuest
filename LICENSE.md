@@ -4,7 +4,7 @@
 
 ### Copyright Notice
 
-Copyright (c) [year], Damian Grubecki, Maciej Ludwiczak, Mgr Sebastian Zmudziński
+Copyright (c) [year], Damian Grubecki, Maciej Ludwiczak, Sebastian Zmudziński
 All rights reserved.
 
 ### License Agreement
