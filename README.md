@@ -21,11 +21,20 @@ The project entails creating a user-friendly web application for learning law th
 
 ### ⚙️ Tools and Technologies
 
-- IDE: Visual Studio Code
-- Backend: PHP
-- Frontend: HTML, CSS, <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;, Bootstrap
-- Databases: MySQL
-- Version Control System: Git (GitHub repository)
+**IDE:**
+Visual Studio Code
+
+**Backend:**
+PHP
+
+**Frontend:**
+HTML, CSS, <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>
+
+**Databases:** 
+MySQL
+
+**Version Control System:**
+Git (GitHub repository)
 
 ## 🛠️ Planned Functionalities
 
