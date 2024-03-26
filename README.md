@@ -29,7 +29,7 @@ The project entails creating a user-friendly web application for learning law th
 
 ### Database <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg" title="PHP" alt="PHP" width="30" height="30"/>
 
-### Version Control System <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Github" alt="Github" width="30" height="30" fill="white"/>
+### Version Control System <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Github" alt="Github" width="30" height="30" style="fill: white !important;"/>
 
 ## 🛠️ Planned Functionalities
 
