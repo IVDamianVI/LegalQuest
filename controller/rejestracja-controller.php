@@ -87,7 +87,7 @@ function sendEmail($email, $user)
             <title>Platforma e-learningowa ICK - Informacja o nowym użytkowniku</title>
         </head>
         <body>
-            <img src="https://ick.ivdamianvi.smallhost.pl/media/favicon/favicon.svg" height="40px" alt="Logo" title="Logo">
+            <img src="https://i.imgur.com/1azbkYB.png" height="40px" alt="Logo" title="Logo">
             <h1>Witaj!</h1>
             <p>Cześć ' . $user . ',</p>
             <br/>
