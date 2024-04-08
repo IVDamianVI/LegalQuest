@@ -49,13 +49,13 @@ declare(strict_types=1); ?>
             enctype="multipart/form-data" autocomplete="off">
             <?php
             session_start();
-            if (isset ($_SESSION['error_message'])) {
+            if (isset($_SESSION['error_message'])) {
                 echo '<div class="alert alert-danger" role="alert">';
                 echo '<i class="bi bi-exclamation-triangle-fill"></i> Wystąpił problem<hr>';
                 echo $_SESSION['error_message'];
                 echo '</div>';
                 unset($_SESSION['error_message']);
-            } else if (isset ($_SESSION['success_message'])) {
+            } else if (isset($_SESSION['success_message'])) {
                 echo '<div class="alert alert-success" role="alert">';
                 echo '<i class="bi bi-check-circle-fill"></i> Sukces<hr>';
                 echo $_SESSION['success_message'];
@@ -63,22 +63,29 @@ declare(strict_types=1); ?>
                 unset($_SESSION['success_message']);
             }
             ?>
+            <!--// TODO Sprawdzanie dostępności maila \\-->
+            <span id="emailAvailability" class="alert-danger"></span>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="email" minlength="3" placeholder="Email" name="email"
+                    oninput="validateEmail(this)">
+                <label for="email">E-mail</label>
+            </div>
             <span id="usernameAvailability" class="alert-danger"></span>
             <div class="form-floating">
                 <input type="text" class="form-control" id="username" minlength="8" placeholder="Login" name="user"
                     oninput="sanitizeUsername(this)">
                 <label for="username">Nazwa użytkownika (min. 5 znaków)</label>
             </div>
+            <div id="passwordStrengthBar">
+                <div id="strengthIndicator"></div>
+            </div>
+            <div id="passwordFeedback"></div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="pass" minlength="8" placeholder="Hasło" name="pass"
                     onfocus="showPasswordStrength(true)" onblur="showPasswordStrength(false)"
                     oninput="checkPasswordStrength()">
                 <label for="pass">Hasło (min. 8 znaków)</label>
             </div>
-            <div id="passwordStrengthBar">
-                <div id="strengthIndicator"></div>
-            </div>
-            <div id="passwordFeedback"></div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="pass1" placeholder="Powtórz hasło" name="pass1">
                 <label for="pass1" id="passwordLabel">Powtórz hasło</label>
@@ -91,7 +98,7 @@ declare(strict_types=1); ?>
         <div class="mb-3">
             <span class="color-text-icon">Masz już konto? <a id="link" href="logowanie.php">Zaloguj się</a> tutaj</span>
             <br>
-            <a id="link" href="../index.html" style="font-weight: unset;">Wróć na stronę główną</a>
+            <a id="link" href="/" style="font-weight: unset;">Wróć na stronę główną</a>
         </div>
     </div>
     <script src="script/register.js" type="text/javascript"></script>

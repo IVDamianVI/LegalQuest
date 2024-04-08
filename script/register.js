@@ -2,6 +2,11 @@ function sanitizeUsername(input) {
     input.value = input.value.replace(/[^a-zA-Z0-9ęóąśłżźćńĘÓĄŚŁŻŹĆŃ]/g, '');
 }
 
+function validateEmail(input) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(input);
+}
+
 let isUsernameAvailable = false;
 
 $(document).ready(function () {

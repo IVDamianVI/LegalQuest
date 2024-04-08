@@ -2,7 +2,7 @@
 declare(strict_types=1);
 session_start();
 $current_page = basename($_SERVER['PHP_SELF']);
-if (isset ($_SESSION['loggedin'])) {
+if (isset($_SESSION['loggedin'])) {
     header('Location: /');
     exit();
 }
@@ -54,13 +54,13 @@ $_SESSION['page'] = basename($_SERVER['PHP_SELF']);
         <form class="form-signin form-register" method="post" action="controller/logowanie-controller.php">
             <?php
             session_start();
-            if (isset ($_SESSION['error_message'])) {
+            if (isset($_SESSION['error_message'])) {
                 echo '<div class="alert alert-danger" role="alert">';
                 echo '<i class="bi bi-exclamation-triangle-fill"></i> Wystąpił problem<hr>';
                 echo $_SESSION['error_message'];
                 echo '</div>';
                 unset($_SESSION['error_message']);
-            } else if (isset ($_SESSION['success_message'])) {
+            } else if (isset($_SESSION['success_message'])) {
                 echo '<div class="alert alert-success" role="alert">';
                 echo '<i class="bi bi-check-circle-fill"></i> Sukces<hr>';
                 echo $_SESSION['success_message'];
@@ -80,8 +80,8 @@ $_SESSION['page'] = basename($_SERVER['PHP_SELF']);
             <button class="btn btn-lg btn-primary" type="submit" disabled>Zaloguj</button>
         </form>
         <div class="mb-3">
-            <!-- !!! REJESTRACJA WYŁĄCZONA !!! -->
-            <span class="color-text-icon">Nie masz jeszcze konta? <a id="link" href="">Zarejestruj się</a>
+            <span class="color-text-icon">Nie masz jeszcze konta? <a id="link" href="rejestracja.php">Zarejestruj
+                    się</a>
                 tutaj</span>
             <br>
             <a id="link" href="../index.html" style="font-weight: unset;">Wróć na stronę główną</a>
