@@ -57,7 +57,7 @@ include ('controller/logout-auto-controller.php');
         <section class="sekcja1">
             <div class="container-fluid">
                 <h1 class="text-center shine" style="color: var(--primary-color); padding-top: 6em;">
-                    Witaj na stronie głównej!
+                    Witaj na stronie głównej! TEST
                 </h1>
             </div>
         </section>
