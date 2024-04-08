@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 session_start();
-if (isset ($_SESSION['loggedin'])) {
+if (isset($_SESSION['loggedin'])) {
     $user = $_SESSION['user'];
     $userGroup = $_SESSION['userGroup'];
 } else {
@@ -41,13 +41,13 @@ if (isset ($_SESSION['loggedin'])) {
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item <?php if ($_SESSION['page'] == 'index.php')
                         echo 'wybrana-strona'; ?>">
-                        <a class="nav-link" href="/ick/">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                 </ul>
             </div>
             <!-- Collapsible wrapper END -->
             <!-- Account PC START -->
-            <div class="pc-only" style="<?php if (!isset ($_SESSION['loggedin'])) {
+            <div class="pc-only" style="<?php if (!isset($_SESSION['loggedin'])) {
                 echo 'display: none;';
             } ?>">
                 <div class="dropdown">
@@ -80,7 +80,7 @@ if (isset ($_SESSION['loggedin'])) {
             </div>
             <!-- Account PC END -->
 
-            <div class="pc-only" style="<?php if (isset ($_SESSION['loggedin'])) {
+            <div class="pc-only" style="<?php if (isset($_SESSION['loggedin'])) {
                 echo 'display: none;';
             } ?>">
                 <div class="dropdown">
