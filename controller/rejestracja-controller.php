@@ -115,7 +115,7 @@ function sendEmail($email, $user)
                     <p>Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie przygotowaliśmy!</p>
 
                     <h3>Potrzebujesz pomocy?</h3>
-                    <p>Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: 
+                    <p>Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres:<br/>
                         <a href="mailto:' . $mailReplyTo . '" style="color: #4ab7d4; text-decoration: none;">' . $mailReplyTo . '</a>
                     </p>
                 </main>
