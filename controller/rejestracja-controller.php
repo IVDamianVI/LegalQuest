@@ -82,26 +82,111 @@ function sendEmail($email, $user)
         $mail->isHTML(true);
         $mail->Subject = '[ICK] Twoje konto zostało utworzone!';
         $mail->Body = '
-        <html>
+        <!DOCTYPE html>
+        <html lang="pl">
+
         <head>
-            <title>Platforma e-learningowa ICK - Informacja o nowym użytkowniku</title>
+            <meta charset="UTF-8">
+            <title>Potwierdzenie rejestracji konta</title>
+            <style>
+                body {
+                    font-family: `Segoe UI`, Tahoma, Geneva, Verdana, sans-serif;
+                    color: #2c3440;
+                    max-width: 600px;
+                    margin: auto;
+                }
+                header {
+                    background-color: #19379c;
+                    padding: 20px;
+                    text-align: center;
+                    color: #ffffff;
+                }
+                main {
+                    padding: 20px;
+                    background-color: #fbfffb;
+                }
+                a {
+                    color: #4ab7d4;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                footer {
+                    background-color: #2c3440;
+                    padding: 10px;
+                    text-align: center;
+                    color: #ffffff;
+                }
+            </style>
         </head>
+
         <body>
-            <img src="https://i.imgur.com/1azbkYB.png" height="40px" alt="Logo" title="Logo">
-            <h1>Witaj!</h1>
-            <p>Cześć ' . $user . ',</p>
-            <br/>
-            <p>Dziękujemy za założenie konta na ICK.</p>
-            <br/>
-            <p><b>Twoje dane:</b></p>
-            <p>E-mail: ' . $email . '</p>
-            <p>Nazwa użytkownika: ' . $user . '</p>
-            <br/>
-            <p>Administratorem twoich danych osobowych jest Damian Grubecki, który przetwarza je w celu realizacji usługi platformy e-learningowej ICK. Dane będą przetwarzane do czasu usunięcia konta użytkownika.</p>
+            <div>
+                <header>
+                    <h1>Witaj w ' . $appName . '!</h1>
+                </header>
+
+                <main>
+                    <h2>Cześć ' . $user . ',</h2>
+                    <p>Dziękujemy za utworzenie konta w ' . $appName . '. Twoje konto zostało pomyślnie założone.</p>
+
+                    <h3>Aktywacja konta</h3>
+                    <p>Proszę aktywować swoje konto, klikając w poniższy link:</p>
+                    <p><a href="https://ick.ivdamianvi.smallhost.pl/aktywacja-konta?token=' . $token . '">Aktywuj konto</a></p>
+
+                    <h3>Dane konta</h3>
+                    <p>Login: ' . $user . '</p>
+                    <p>Email: ' . $email . '</p>
+
+                    <h3>Początek przygody</h3>
+                    <p>Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie
+                        przygotowaliśmy!</p>
+
+                    <h3>Potrzebujesz pomocy?</h3>
+                    <p>Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: <a
+                            href="mailto:' . $mailReplyTo . '">' . $mailReplyTo . '</a>.</p>
+                </main>
+
+                <footer>
+                    <p>Prosimy o nie odpowiadanie na tę wiadomość, została ona wygenerowana automatycznie.</p>
+                    <p><a href="https://ick.ivdamianvi.smallhost.pl/polityka-prywatnosci">Polityka prywatności</a> | <a
+                            href="https://ick.ivdamianvi.smallhost.pl/regulamin">Regulamin serwisu</a></p>
+                    <p>&copy; 2024 ' . $appName . '. Wszelkie prawa zastrzeżone.</p>
+                </footer>
+            </div>
         </body>
+
         </html>
         ';
-        $mail->AltBody = 'Witaj! Na platformie e-learningowej ICK zarejestrował się nowy użytkownik. Imię i nazwisko: ' . $user . ' E-mail: ' . $email . ' Administratorem twoich danych osobowych jest Damian Grubecki, który przetwarza je w celu realizacji usługi platformy e-learningowej ICK. Dane będą przetwarzane do czasu usunięcia konta użytkownika.';
+        $mail->AltBody = '
+        Witaj w ' . $appName . '!
+
+        Cześć ' . $user . ',
+
+        Dziękujemy za utworzenie konta w ' . $appName . '. Twoje konto zostało pomyślnie założone.
+
+        Aktywacja konta
+        Proszę aktywować swoje konto, klikając w link poniżej (lub skopiuj i wklej go do przeglądarki):
+        https://ick.ivdamianvi.smallhost.pl/aktywacja-konta?token=' . $token . '
+
+        Dane konta
+        Login: ' . $user . '
+        Email: ' . $email . '
+
+        Początek przygody
+        Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie przygotowaliśmy!
+
+        Potrzebujesz pomocy?
+        Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: ' . $mailReplyTo . '.
+
+        Prosimy o nie odpowiadanie na tę wiadomość, została ona wygenerowana automatycznie.
+
+        Polityka prywatności: https://ick.ivdamianvi.smallhost.pl/polityka-prywatnosci
+        Regulamin serwisu: https://ick.ivdamianvi.smallhost.pl/regulamin
+
+        © 2024 ' . $appName . '. Wszelkie prawa zastrzeżone.
+        ';
 
         $mail->send();
         echo 'Wiadomość została wysłana!';
