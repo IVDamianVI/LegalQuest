@@ -84,79 +84,42 @@ function sendEmail($email, $user)
         $mail->Body = '
         <!DOCTYPE html>
         <html lang="pl">
-
         <head>
             <meta charset="UTF-8">
             <title>Potwierdzenie rejestracji konta</title>
-            <style>
-                body {
-                    font-family: `Segoe UI`, Tahoma, Geneva, Verdana, sans-serif;
-                    color: #2c3440;
-                    max-width: 600px;
-                    margin: auto;
-                }
-                header {
-                    background-color: #19379c;
-                    padding: 20px;
-                    text-align: center;
-                    color: #ffffff;
-                }
-                main {
-                    padding: 20px;
-                    background-color: #fbfffb;
-                }
-                a {
-                    color: #4ab7d4;
-                    text-decoration: none;
-                }
-                a:hover {
-                    text-decoration: underline;
-                }
-                footer {
-                    background-color: #2c3440;
-                    padding: 10px;
-                    text-align: center;
-                    color: #ffffff;
-                }
-            </style>
         </head>
-
-        <body>
+        <body style="font-family: `Segoe UI`, Tahoma, Geneva, Verdana, sans-serif; color: #2c3440; max-width: 600px; margin: auto;">
             <div>
-                <header>
+                <header style="background-color: #19379c; padding: 20px; text-align: center; color: #ffffff;">
                     <h1>Witaj w ' . $appName . '!</h1>
                 </header>
 
-                <main>
+                <main style="padding: 20px; background-color: #fbfffb;">
                     <h2>Cześć ' . $user . ',</h2>
                     <p>Dziękujemy za utworzenie konta w ' . $appName . '. Twoje konto zostało pomyślnie założone.</p>
 
                     <h3>Aktywacja konta</h3>
                     <p>Proszę aktywować swoje konto, klikając w poniższy link:</p>
-                    <p><a href="https://ick.ivdamianvi.smallhost.pl/aktywacja-konta?token=' . $token . '">Aktywuj konto</a></p>
+                    <p><a href="https://ick.ivdamianvi.smallhost.pl/aktywacja-konta?token=<?php echo $token; ?>" style="color: #4ab7d4; text-decoration: none;">Aktywuj konto</a></p>
 
                     <h3>Dane konta</h3>
                     <p>Login: ' . $user . '</p>
                     <p>Email: ' . $email . '</p>
 
                     <h3>Początek przygody</h3>
-                    <p>Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie
-                        przygotowaliśmy!</p>
+                    <p>Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie przygotowaliśmy!</p>
 
                     <h3>Potrzebujesz pomocy?</h3>
-                    <p>Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: <a
-                            href="mailto:' . $mailReplyTo . '">' . $mailReplyTo . '</a>.</p>
+                    <p>Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: <a href="mailto:' . $mailReplyTo . '" style="color: #4ab7d4; text-decoration: none;">' . $mailReplyTo . '</a>.</p>
                 </main>
 
-                <footer>
+                <footer style="background-color: #2c3440; padding: 10px; text-align: center; color: #ffffff;">
                     <p>Prosimy o nie odpowiadanie na tę wiadomość, została ona wygenerowana automatycznie.</p>
-                    <p><a href="https://ick.ivdamianvi.smallhost.pl/polityka-prywatnosci">Polityka prywatności</a> | <a
-                            href="https://ick.ivdamianvi.smallhost.pl/regulamin">Regulamin serwisu</a></p>
+                    <p><a href="https://ick.ivdamianvi.smallhost.pl/polityka-prywatnosci" style="color: #4ab7d4; text-decoration: none;">Polityka prywatności</a> | <a href="https://ick.ivdamianvi.smallhost.pl/regulamin" style="color: #4ab7d4; text-decoration: none;">Regulamin serwisu</a></p>
                     <p>&copy; 2024 ' . $appName . '. Wszelkie prawa zastrzeżone.</p>
                 </footer>
             </div>
         </body>
-
         </html>
         ';
         $mail->AltBody = '
