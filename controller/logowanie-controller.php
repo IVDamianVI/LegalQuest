@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 session_start();
-require('../access.php');
+require ('../access.php');
 
 if (isset($_SESSION['block_time']) && time() - $_SESSION['block_time'] < 60) {
     $remainingTime = 60 - (time() - $_SESSION['block_time']);
@@ -62,7 +62,7 @@ if ($dbConn) {
 
             logUnsuccessfulAttempt($user, $_SERVER['REMOTE_ADDR']);
 
-            header("Location: /$zadanie/");
+            header("Location: /");
         } else {
             $_SESSION['error_message'] = $wrongPass;
 
@@ -90,7 +90,7 @@ mysqli_close($dbConn);
 
 function logUnsuccessfulAttempt($username, $ip)
 {
-    require('../access.php');
+    require ('../access.php');
     $dbConn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbDatabase);
     $stmt = mysqli_prepare($dbConn, "INSERT INTO break_ins (username, ip) VALUES (?, ?)");
     mysqli_stmt_bind_param($stmt, 'ss', $username, $ip);
