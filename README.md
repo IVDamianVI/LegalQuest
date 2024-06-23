@@ -11,7 +11,7 @@
 - Maciej Ludwiczak [@Ermac14](https://github.com/ermac14)
 
 ### Editors
-- 
+- Sebastian Zmudziński
 
 ## 📋 Specifications
 
