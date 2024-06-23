@@ -2,10 +2,34 @@ function sanitizeUsername(input) {
     input.value = input.value.replace(/[^a-zA-Z0-9ęóąśłżźćńĘÓĄŚŁŻŹĆŃ]/g, '');
 }
 
-function validateEmail(input) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(input);
+let isEmailAvailable = false;
+
+function checkEmailAvailability(email) {
+    $.post("controller/check-email.php", { email: email }, function (data) {
+        var response = JSON.parse(data);
+        if (response.available) {
+            isEmailAvailable = true;
+            $("#emailAvailability").text("");
+            $("#email").css("color", "var(--input-font-color)");
+            $("#email").css("border-color", "var(--input-border-color)");
+        } else {
+            isEmailAvailable = false;
+            $("#emailAvailability").html("<i class='bi bi-exclamation-triangle-fill'></i> Wprowadź inny adres email.");
+            $("#email").css("color", "var(--error-color)");
+            $("#email").css("border-color", "var(--error-color)");
+        }
+    });
 }
+
+function validateEmail(input) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const isValid = emailRegex.test(input.value);
+    if (!isValid) {
+        input.style.borderColor = "var(--error-color)";
+    }
+    return isValid;
+}
+
 
 let isUsernameAvailable = false;
 
@@ -16,7 +40,7 @@ $(document).ready(function () {
         clearTimeout(timeoutId);
 
         var username = $(this).val();
-        if (username.length >= 4) {
+        if (username.length >= 5) {
             timeoutId = setTimeout(function () {
                 $.post("controller/check-username.php", { username: username }, function (data) {
                     var response = JSON.parse(data);
@@ -35,9 +59,24 @@ $(document).ready(function () {
             }, 1000);
         } else {
             isUsernameAvailable = false;
-            $("#usernameAvailability").text("");
-            $("#username").css("color", "var(--input-font-color)");
-            $("#username").css("border-color", "var(--input-border-color)");
+            $("#usernameAvailability").html("<i class='bi bi-exclamation-triangle-fill'></i> Nazwa użytkownika jest za krótka.");
+            // $("#username").css("color", "var(--error-color)");
+            $("#username").css("border-color", "var(--error-color)");
+        }
+    });
+
+    $("#email").on("input", function () {
+        clearTimeout(timeoutId);
+
+        var email = $(this).val();
+        if (validateEmail(this)) {
+            timeoutId = setTimeout(function () {
+                checkEmailAvailability(email);
+            }, 1000);
+        } else {
+            isEmailAvailable = false;
+            $("#emailAvailability").text("");
+            $("#email").css("border-color", "var(--error-color)");
         }
     });
 
@@ -222,9 +261,4 @@ function provideFeedback(feedbackText, strength) {
     }
     feedbackElement.style.display = "block";
     feedbackElement.textContent = strength < 3 ? feedbackText : "";
-}
-
-function disableSubmit(disabled) {
-    const submitButton = document.querySelector('button[type="submit"]');
-    submitButton.disabled = disabled;
 }

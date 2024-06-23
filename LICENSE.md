@@ -1,4 +1,4 @@
-# Human-Computer Interaction - License
+# LegalQuest - License
 
 ### Copyright Notice
 
@@ -7,7 +7,7 @@ All rights reserved.
 
 ### License Agreement
 
-This license is a legal agreement between you (either an individual or a single entity) and the authors of "Human-Computer Interaction" (hereinafter referred to as "the authors") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation (hereinafter referred to as "the Software").
+This license is a legal agreement between you (either an individual or a single entity) and the authors of "LegalQuest" (hereinafter referred to as "the authors") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation (hereinafter referred to as "the Software").
 
 By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this License. If you do not agree to the terms of this License, do not install or use the Software.
 

@@ -9,7 +9,7 @@ if (isset($_SESSION['block_time']) && time() - $_SESSION['block_time'] < 60) {
     if (isset($_SESSION['login_attempts'])) {
         unset($_SESSION['login_attempts']);
     }
-    header('Location: ../logowanie.php');
+    header('Location: /ick/logowanie');
     exit();
 }
 
@@ -18,7 +18,7 @@ if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] >= 3) {
 
     $_SESSION['error_message'] = 'Za dużo nieudanych prób.<br/> Zaczekaj 1 minutę przed ponowną próbą.';
     $_SESSION['block_time'] = time();
-    header('Location: ../logowanie.php');
+    header('Location: /ick/logowanie');
     exit();
 }
 
@@ -48,7 +48,7 @@ if ($dbConn) {
             $_SESSION['user'] = $user;
             $_SESSION['avatar'] = $userAssoc['avatar'];
             $_SESSION['page'] = 'index.php';
-            $_SESSION['userid'] = $userAssoc['id'];
+            $_SESSION['user_id'] = $userAssoc['id'];
             $_SESSION['created'] = $userAssoc['created'];
             $_SESSION['banner'] = $userAssoc['banner'];
             $_SESSION['userGroup'] = $userAssoc['userGroup'];
@@ -62,7 +62,7 @@ if ($dbConn) {
 
             logUnsuccessfulAttempt($user, $_SERVER['REMOTE_ADDR']);
 
-            header("Location: /");
+            header("Location: /ick/");
         } else {
             $_SESSION['error_message'] = $wrongPass;
 
@@ -72,17 +72,17 @@ if ($dbConn) {
                 $_SESSION['login_attempts']++;
             }
 
-            header('Location: ../logowanie.php');
+            header('Location: /ick/logowanie');
             exit();
         }
     } else {
         $_SESSION['error_message'] = $wrongPass;
-        header('Location: ../logowanie.php');
+        header('Location: /ick/logowanie');
         exit();
     }
 } else {
     $_SESSION['error_message'] = 'Błąd połączenia z bazą danych.';
-    header('Location: ../logowanie.php');
+    header('Location: /ick/logowanie');
     exit();
 }
 

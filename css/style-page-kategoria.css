@@ -1,0 +1,38 @@
+@import url('/ick/colors.css');
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-hover) !important;
+    border-color: var(--primary-color-hover) !important;
+    color: black !important;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: black !important;
+}
+
+.form-select {
+    background-color: var(--input-bg-color) !important;
+    border-color: var(--input-border-color) !important;
+    color: var(--input-font-color) !important;
+}
+
+.form-select-questions {
+    width: 100px !important;
+}
+
+.form-select-time {
+    width: 150px !important;
+}
+
+h1 {
+    color: var(--primary-color) !important;
+}

@@ -1,153 +1,165 @@
-@import url('colors.css');
-
-nav {
-    padding: 5px !important;
-    padding-bottom: -5em !important;
-}
-
-a {
-    cursor: default;
-}
-
-#icon:hover {
-    color: var(--icon-hover-color) !important;
-}
-
-#logo,
-#account {
-    width: 50px;
-    height: 50px;
-}
-
-#account {
-    background-color: var(--account-bg-color) !important;
-}
-
-#account:hover {
-    background-color: var(--account-hover-bg-color) !important;
-}
-
-#showProfile {
-    color: var(--show-profile-color) !important;
-    margin-top: -10px;
-    line-height: -10px;
-    padding: -10px;
-    font-size: 0.8em;
-    text-decoration: none;
-}
-
-#showProfile:hover {
-    color: var(--show-profile-hover-color) !important;
-    text-decoration: none;
-}
-
-.mobile-only {
-    display: none;
-}
-
-.dropdown-menu,
-.dropdown-item {
-    background-color: var(--dark-grey-color) !important;
-    color: var(--dropdown-color) !important;
-}
-
-.dropdown-menu {
-    border-radius: 2px !important;
-}
-
-.dropdown-item {
-    padding-top: .5em !important;
-    padding-bottom: .5em !important;
-
-}
-
-.dropdown-item:hover {
-    background-color: var(--dropdown-item-hover-color) !important;
-}
-
-.navbar {
-    min-height: 40px;
-    font-size: 15px;
-    background-color: var(--navbar-bg-color);
-    padding-bottom: -10px !important;
-}
-
-.wybrana-strona {
-    border-bottom: 3px solid var(--primary-color) !important;
-}
-
-.wybrana-strona:hover {
-    border-bottom: 3px solid var(--primary-color) !important;
-}
-
-.nav-item {
-    margin-top: 1em !important;
-    padding-left: 1em !important;
-    padding-right: 1em !important;
-    width: 12em !important;
-    text-align: center !important;
-}
-
-.nav-item,
-.nav-link {
-    color: var(--navitem-color) !important;
-    text-transform: uppercase !important;
-    font-weight: 600 !important;
-    font-size: 1em;
-}
-
-.nav-item {
-    border: 2px solid var(--navitem-border-color);
-    border-radius: 0px !important;
-}
-
-.nav-item:hover {
-    background-color: var(--navitem-hover-bg-color) !important;
-    border-color: var(--navitem-hover-border-color);
-}
-
-:root button.navbar-toggler {
-    color: var(--primary-color) !important;
-    font-size: 30px !important;
-    border: none !important;
-    padding: 0px !important;
-    margin: 0px !important;
-    margin-right: 1em !important;
-}
-
-:root button.navbar-toggler:focus,
-:root button.navbar-toggler:active,
-:root button.navbar-toggler:hover,
-:root button.navbar-toggler:visited,
-:root button.navbar-toggler {
-    border: none !important;
-    box-shadow: none !important;
-}
-
-@media only screen and (max-width: 992px) {
-    .mobile-only {
-        display: block;
-    }
-
-    .pc-only {
-        display: none;
-    }
-
-    #logo,
-    #account {
-        width: 30px;
-        height: 30px;
-    }
-
-    #account {
-        border: 1px solid var(--account-bg-color);
-    }
-
-    #account:hover {
-        border: 1px solid var(--account-hover-bg-color) !important;
-    }
-
-    .dropdown {
-        width: auto !important;
-    }
+@import url('colors.css');
+
+nav {
+    padding: 5px !important;
+    padding-bottom: -5em !important;
+}
+
+a {
+    cursor: default;
+}
+
+#icon:hover {
+    color: var(--icon-hover-color) !important;
+}
+
+#logo,
+#account {
+    width: 50px;
+    height: 50px;
+}
+
+#account {
+    background-color: var(--account-bg-color) !important;
+}
+
+#account:hover {
+    background-color: var(--account-hover-bg-color) !important;
+}
+
+#showProfile {
+    color: var(--show-profile-color) !important;
+    margin-top: -10px;
+    line-height: -10px;
+    padding: -10px;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+#showProfile:hover {
+    color: var(--show-profile-hover-color) !important;
+    text-decoration: none;
+}
+
+#app-name {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    cursor: pointer !important;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.dropdown-menu,
+.dropdown-item {
+    background-color: var(--dark-grey-color) !important;
+    color: var(--dropdown-color) !important;
+}
+
+.dropdown-menu {
+    border-radius: 2px !important;
+}
+
+.dropdown-item {
+    padding-top: .5em !important;
+    padding-bottom: .5em !important;
+}
+
+.dropdown-item:hover {
+    background-color: var(--dropdown-item-hover-color) !important;
+}
+
+.navbar {
+    min-height: 40px;
+    font-size: 15px;
+    background-color: var(--navbar-bg-color);
+    padding-bottom: -10px !important;
+}
+
+.wybrana-strona {
+    border-bottom: 3px solid var(--primary-color) !important;
+}
+
+.wybrana-strona:hover {
+    border-bottom: 3px solid var(--primary-color) !important;
+}
+
+.nav-item {
+    margin-top: 1em !important;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    width: 12em !important;
+    text-align: center !important;
+}
+
+.nav-item,
+.nav-link {
+    color: var(--navitem-color) !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    font-size: 1em;
+}
+
+.nav-item {
+    width: 200px !important;
+}
+
+.nav-item {
+    border: 2px solid var(--navitem-border-color);
+    border-radius: 0px !important;
+}
+
+.nav-item:hover {
+    background-color: var(--navitem-hover-bg-color) !important;
+    border-color: var(--navitem-hover-border-color);
+}
+
+:root button.navbar-toggler {
+    color: var(--primary-color) !important;
+    font-size: 30px !important;
+    border: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    margin-right: 1em !important;
+}
+
+:root button.navbar-toggler:focus,
+:root button.navbar-toggler:active,
+:root button.navbar-toggler:hover,
+:root button.navbar-toggler:visited,
+:root button.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .pc-only {
+        display: none;
+    }
+
+    #logo,
+    #account {
+        width: 50px;
+        height: 50px;
+    }
+
+    #account {
+        border: 1px solid var(--account-bg-color);
+    }
+
+    #account:hover {
+        border: 1px solid var(--account-hover-bg-color) !important;
+    }
+
+    .dropdown {
+        width: auto !important;
+    }
 }

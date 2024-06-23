@@ -1,0 +1,23 @@
+@import url('/ick/css/colors.css');
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-hover) !important;
+    border-color: var(--primary-color-hover) !important;
+    color: black !important;
+}
+
+h1 {
+    color: var(--primary-color) !important;
+}
+
+.list-group-item {
+    color: #fff !important;
+    padding: 0.75rem 1.25rem !important;
+}

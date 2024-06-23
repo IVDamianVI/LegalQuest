@@ -2,10 +2,10 @@
 function toggleTheme() {
     if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
         document.documentElement.setAttribute('data-bs-theme', 'light');
-        localStorage.setItem('theme', 'light'); // Zapisz wybór użytkownika w localStorage
+        localStorage.setItem('theme', 'light');
     } else {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); // Zapisz wybór użytkownika w localStorage
+        localStorage.setItem('theme', 'dark');
     }
 }
 
@@ -31,7 +31,6 @@ setIconBasedOnTheme();
 // Funkcja inicjalizująca motyw strony na podstawie danych z localStorage
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
-    // console.log(savedTheme);
     if (savedTheme === 'dark') {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
     } else if (savedTheme === 'light') {
@@ -40,9 +39,7 @@ function initializeTheme() {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
     }
 
-    // Aktualizacja ikony na podstawie motywu strony
     setIconBasedOnTheme();
 }
 
-// inicjalizacja motywu strony
 initializeTheme();

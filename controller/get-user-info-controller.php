@@ -4,7 +4,6 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require ('../access.php');
 
-    // Pozyskanie danych z IP
     function ip_details($ip)
     {
         $json = file_get_contents("http://ipinfo.io/{$ip}/geo");
@@ -14,9 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ipaddress = $_SERVER["REMOTE_ADDR"];
     $details = ip_details($ipaddress);
 
-    // Ustawianie wartości dla przeglądarki i systemu operacyjnego
     $userAgent = $_SERVER['HTTP_USER_AGENT'];
-    // Ustawianie wartości dla przeglądarki
     $browserInfo = "";
     $os = "";
 
@@ -34,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $browserInfo = "Opera";
         }
     }
-    // Ustawianie wartości dla systemu operacyjnego
+
     $osPattern = '/\(([^)]+)\)/';
 
     $osMapping = [
@@ -75,14 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $os = $fullOs;
     }
 
-    // Skracanie nazwy regionu
     if ($details->region == "Kujawsko-Pomorskie") {
         $region = "Kuj-Pom";
     } else {
         $region = $details->region;
     }
 
-    // Przypisywanie wartości do zmiennych
     $ip = $details->ip;
     $city = $_POST['city'];
     if ($city == '' || $city == 'undefined' || $city == 'your city') {
@@ -103,31 +98,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 3, 2);
     $userDevice = exec('whoami');
 
-    if (!isset ($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         $user = '-';
     } else {
         $user = $_SESSION['user'];
     }
 
-    // Zapis w bazie danych
-    // if ($ip != '') {
-    if ($ip != '83.21.255.7' && $ip != '' && $ip != '83.21.250.229') {
+    if ($ip != '') {
         $dbConn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbDatabase);
 
         if ($dbConn) {
             $query = "INSERT INTO goscieportalu (page, username, ip, userdevice, localization, coord, browser, display, viewport, colors, cookies, java, lang) 
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
             $stmt = mysqli_prepare($dbConn, $query);
-
             mysqli_stmt_bind_param($stmt, "sssssssssssss", $page, $user, $ip, $userDevice, $localization, $coord, $browser, $display, $viewport, $colors, $cookies, $java, $lang);
-
             if (mysqli_stmt_execute($stmt)) {
             }
-
             mysqli_stmt_close($stmt);
         }
-
         mysqli_close($dbConn);
     }
 }

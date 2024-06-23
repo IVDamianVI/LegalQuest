@@ -2,16 +2,15 @@
 
 declare(strict_types=1);
 session_start();
-require ('../access.php');
+require '../access.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 function redirectToRegisterWithError($error)
 {
     $_SESSION['error_message'] = $error;
-    header('Location: ../rejestracja.php');
+    header('Location: /ick/rejestracja');
     exit();
 }
 
@@ -45,7 +44,7 @@ function createUserAndUploadAvatar($dbConn, $email, $user, $passHash, $fileName)
     if ($stmt) {
         $_SESSION['success_message'] = 'Pomyślnie utworzono konto.';
         mysqli_close($dbConn);
-        header('Location: ../logowanie.php');
+        header('Location: /ick/logowanie');
         exit();
     } else {
         redirectToRegisterWithError('Błąd bazy danych.');
@@ -57,10 +56,12 @@ function sendEmail($email, $user)
     require '../PHPMailer/src/Exception.php';
     require '../PHPMailer/src/PHPMailer.php';
     require '../PHPMailer/src/SMTP.php';
-    require ('../access.php');
+    require '../access.php';
+
     $mail = new PHPMailer(true);
     try {
-        // Server settings
+        $token = bin2hex(random_bytes(32));
+
         $mail->isSMTP();
         $mail->Host = $mailHost;
         $mail->SMTPAuth = true;
@@ -69,101 +70,88 @@ function sendEmail($email, $user)
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
 
-        // Recipients
         $mail->CharSet = 'UTF-8';
         $mail->setFrom($mailFrom, $mailFromName);
         $mail->addReplyTo($mailReplyTo, $mailReplyToName);
         $mail->addAddress($email, $user);
 
-        //Attachments
-        // $mail->addAttachment('../media/favicon/favicon-orange.png', 'ikona.png');
-
-        // Content
         $mail->isHTML(true);
-        $mail->Subject = '[' . $appName . '] Twoje konto zostało utworzone!';
-        $mail->Body = '
+        $mail->Subject = "[$appName] Twoje konto zostało utworzone!";
+        $mail->Body = "
         <!DOCTYPE html>
-        <html lang="pl">
+        <html lang='pl'>
         <head>
-            <meta charset="UTF-8">
+            <meta charset='UTF-8'>
             <title>Potwierdzenie rejestracji konta</title>
         </head>
-        <body style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: #2c3440; max-width: 600px; margin: auto;">
+        <body style='font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: #2c3440; max-width: 600px; margin: auto;'>
             <div>
-                <header style="background-color: #19379c; padding: 20px; text-align: center; color: #ffffff;">
-                    <h1>Witaj w ' . $appName . '!</h1>
+                <header style='background-color: #19379c; padding: 20px; text-align: center; color: #ffffff;'>
+                    <h1>Witaj w $appName!</h1>
                 </header>
-
-                <main style="padding: 20px; background-color: #fbfffb;">
-                    <h2>Cześć ' . $user . ',</h2>
-                    <p>Dziękujemy za utworzenie konta w ' . $appName . '. Twoje konto zostało pomyślnie założone.</p>
-
+                <main style='padding: 20px; background-color: #fbfffb;'>
+                    <h2>Cześć $user,</h2>
+                    <p>Dziękujemy za utworzenie konta w $appName. Twoje konto zostało pomyślnie założone.</p>
                     <h3>Aktywacja konta</h3>
                     <p>Proszę aktywować swoje konto, klikając w poniższy przycisk:</p>
                     <p>
-                        <a href="https://ick.ivdamianvi.smallhost.pl/aktywacja-konta?token=' . $token . '" 
-                        style="background-color: #4ab7d4; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                        <a href='https://ivdamianvi.smallhost.pl/ick/aktywacja-konta?token=$token' 
+                        style='background-color: #4ab7d4; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;'>
                         Aktywuj konto
                         </a>
                     </p>
-
                     <h3>Dane konta</h3>
-                    <p>Login: ' . $user . '</p>
-                    <p>Email: ' . $email . '</p>
-
+                    <p>Login: $user</p>
+                    <p>Email: $email</p>
                     <h3>Początek przygody</h3>
                     <p>Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie przygotowaliśmy!</p>
-
                     <h3>Potrzebujesz pomocy?</h3>
                     <p>Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres:<br/>
-                        <a href="mailto:' . $mailReplyTo . '" style="color: #4ab7d4; text-decoration: none;">' . $mailReplyTo . '</a>
+                        <a href='mailto:$mailReplyTo' style='color: #4ab7d4; text-decoration: none;'>$mailReplyTo</a>
                     </p>
                 </main>
-
-                <footer style="background-color: #2c3440; padding: 10px; text-align: center; color: #ffffff;">
+                <footer style='background-color: #2c3440; padding: 10px; text-align: center; color: #ffffff;'>
                     <p>Prosimy o nie odpowiadanie na tę wiadomość, została ona wygenerowana automatycznie.</p>
                     <p>
-                        <a href="https://ick.ivdamianvi.smallhost.pl/polityka-prywatnosci" style="color: #4ab7d4; text-decoration: none;">Polityka prywatności</a> | 
-                        <a href="https://ick.ivdamianvi.smallhost.pl/regulamin" style="color: #4ab7d4; text-decoration: none;">Regulamin serwisu</a>
+                        <a href='https://ivdamianvi.smallhost.pl/ick/polityka-prywatnosci' style='color: #4ab7d4; text-decoration: none;'>Polityka prywatności</a> | 
+                        <a href='https://ivdamianvi.smallhost.pl/ick/regulamin' style='color: #4ab7d4; text-decoration: none;'>Regulamin serwisu</a>
                     </p>
-                    <p>&copy; 2024 ' . $appName . '. Wszelkie prawa zastrzeżone.</p>
+                    <p>&copy; 2024 $appName. Wszelkie prawa zastrzeżone.</p>
                 </footer>
             </div>
         </body>
         </html>
-        ';
+        ";
+        $mail->AltBody = "
+        Witaj w $appName!
 
-        $mail->AltBody = '
-        Witaj w ' . $appName . '!
+        Cześć $user,
 
-        Cześć ' . $user . ',
-
-        Dziękujemy za utworzenie konta w ' . $appName . '. Twoje konto zostało pomyślnie założone.
+        Dziękujemy za utworzenie konta w $appName. Twoje konto zostało pomyślnie założone.
 
         Aktywacja konta
         Proszę aktywować swoje konto, klikając w link poniżej (lub skopiuj i wklej go do przeglądarki):
-        https://ick.ivdamianvi.smallhost.pl/aktywacja-konta?token=' . $token . '
+        https://ivdamianvi.smallhost.pl/ick/aktywacja-konta?token=$token
 
         Dane konta
-        Login: ' . $user . '
-        Email: ' . $email . '
+        Login: $user
+        Email: $email
 
         Początek przygody
         Możesz już teraz korzystać z pełni możliwości aplikacji. Zaloguj się i odkryj, co dla Ciebie przygotowaliśmy!
 
         Potrzebujesz pomocy?
-        Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: ' . $mailReplyTo . '.
+        Jeśli masz jakiekolwiek pytania, skontaktuj się z nami wysyłając e-mail na adres: $mailReplyTo.
 
         Prosimy o nie odpowiadanie na tę wiadomość, została ona wygenerowana automatycznie.
 
-        Polityka prywatności: https://ick.ivdamianvi.smallhost.pl/polityka-prywatnosci
-        Regulamin serwisu: https://ick.ivdamianvi.smallhost.pl/regulamin
+        Polityka prywatności: https://ivdamianvi.smallhost.pl/ick/polityka-prywatnosci
+        Regulamin serwisu: https://ivdamianvi.smallhost.pl/ick/regulamin
 
-        © 2024 ' . $appName . '. Wszelkie prawa zastrzeżone.
-        ';
+        © 2024 $appName. Wszelkie prawa zastrzeżone.
+        ";
 
         $mail->send();
-        echo 'Wiadomość została wysłana!';
     } catch (Exception $e) {
         redirectToRegisterWithError('Błąd wysłania maila z danymi logowania.');
     }
@@ -171,7 +159,7 @@ function sendEmail($email, $user)
 
 $dbConn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbDatabase);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$user = htmlentities($_POST['user'], ENT_QUOTES, "UTF-8");
+$user = filter_input(INPUT_POST, 'user', FILTER_SANITIZE_STRING);
 $pass = $_POST['pass'];
 $pass1 = $_POST['pass1'];
 $passHash = password_hash($pass, PASSWORD_BCRYPT);
@@ -184,11 +172,11 @@ if (!$dbConn) {
 
 mysqli_query($dbConn, "SET NAMES 'utf8'");
 
-if (!isset($user) || !isset($pass) || !isset($pass1)) {
+if (!$user || !$pass || !$pass1) {
     redirectToRegisterWithError('Wszystkie pola muszą być wypełnione.');
 }
 
-if (empty($email)) {
+if (!$email) {
     redirectToRegisterWithError('Wprowadź poprawny adres e-mail.');
 }
 
@@ -235,7 +223,7 @@ if (isset($_FILES["avatar"]) && $_FILES["avatar"]["error"] === 0) {
         sendEmail($email, $user);
         $_SESSION['success_message'] = 'Pomyślnie utworzono konto.';
         mysqli_close($dbConn);
-        header('Location: ../logowanie.php');
+        header('Location: /ick/logowanie');
         exit();
     } else {
         redirectToRegisterWithError(mysqli_error($dbConn));
